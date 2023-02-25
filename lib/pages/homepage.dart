@@ -42,6 +42,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  ///create new task
+  ///
+  void createNewTask(){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -57,8 +63,7 @@ class _HomePageState extends State<HomePage> {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: tdBlue,
-          onPressed:(){
-          },
+          onPressed:createNewTask,
           child: Icon(Icons.add),
         ),
         body: ListView.builder(

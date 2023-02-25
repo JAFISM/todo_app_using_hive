@@ -16,12 +16,11 @@ class ToDoTile extends StatelessWidget {
             Checkbox(value: taskCompleted, onChanged: onChanged,
               activeColor: tdRed,
             ),
-
-            Text(taskName,style: TextStyle(color: Colors.white,decoration: taskCompleted?TextDecoration.lineThrough:TextDecoration.none,fontWeight: FontWeight.bold),),
+            Text(taskName,style: TextStyle(color: Colors.black,decoration: taskCompleted?TextDecoration.lineThrough:TextDecoration.none,fontWeight: FontWeight.bold),),
           ],
         ),
         decoration: BoxDecoration(
-          color: tdBlue,
+          color: tdBlue.withOpacity(0.1),
           borderRadius: BorderRadius.circular(15)
         ),
         padding: EdgeInsets.all(25),
