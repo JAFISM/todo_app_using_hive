@@ -16,9 +16,10 @@ class ToDoTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 25,right: 25,top: 25),
       child: Slidable(
         endActionPane: ActionPane(
-          motion:StretchMotion(),
+          motion:const StretchMotion(),
           children: [
-            SlidableAction(onPressed: deleteFunction,
+            SlidableAction(
+              onPressed: deleteFunction!,
               icon: Icons.delete,
               backgroundColor: tdRed,
               borderRadius: BorderRadius.circular(10),
@@ -26,20 +27,24 @@ class ToDoTile extends StatelessWidget {
           ],
         ),
         child: Container(
-          child: Row(
-            children: [
-              Checkbox(value: taskCompleted, onChanged: onChanged,
-                activeColor: tdRed,
-                side: BorderSide(width: 2),
-              ),
-              Text(taskName,style: TextStyle(color: Colors.black,decoration: taskCompleted?TextDecoration.lineThrough:TextDecoration.none,fontWeight: FontWeight.bold),),
-            ],
-          ),
           decoration: BoxDecoration(
             color: tdBlue.withOpacity(0.1),
             borderRadius: BorderRadius.circular(15)
           ),
-          padding: EdgeInsets.all(25),
+          padding: const EdgeInsets.all(25),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Checkbox(value: taskCompleted, onChanged: onChanged,
+                activeColor: tdRed,
+                side: const BorderSide(width: 2),
+              ),
+              Text(taskName,style: TextStyle(color: Colors.black,decoration: taskCompleted?TextDecoration.lineThrough:TextDecoration.none,fontWeight: FontWeight.bold),),
+              IconButton(onPressed: (){
+                deleteFunction?.call(context);
+              }, icon: const Icon(Icons.delete,color: Colors.red,))
+            ],
+          ),
         ),
       ),
     );

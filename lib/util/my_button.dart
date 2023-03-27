@@ -11,6 +11,7 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       color: tdBlue,
       child: Text(text),
     );

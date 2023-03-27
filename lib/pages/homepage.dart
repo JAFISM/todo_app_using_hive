@@ -87,6 +87,7 @@ class _HomePageState extends State<HomePage> {
           ),
           elevation: 0,
           centerTitle: true,
+          leading: Icon(Icons.menu),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: tdBlue,

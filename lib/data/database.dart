@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 
-class ToDoDatabase{
+class ToDoDatabase {
   ///reference our box
   final _myBox=Hive.box("mybox");
   List toDoList = [];
@@ -12,7 +12,7 @@ class ToDoDatabase{
 
   ///load the data from database
  void loadData(){
-    toDoList=_myBox.get("TODOLIST");
+   toDoList=_myBox.get("TODOLIST");
  }
 
  ///update the database
